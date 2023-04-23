@@ -1,3 +1,5 @@
+import BlogPreview from "@/components/BlogPreview";
+import Blog from "@/components/blog";
 import Button from "@/components/button";
 import Collection from "@/components/collection";
 import CTA from "@/components/cta";
@@ -36,6 +38,7 @@ export default function Home() {
       </div>
       <CTA />
       <Collection />
+      <BlogPreview />
     </main>
   );
 }
