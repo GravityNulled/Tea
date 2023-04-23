@@ -16,7 +16,7 @@ module.exports = {
         primary: "#282828",
         secondary: "#C3B212",
         background: "FEFEFE",
-        "background-2": "#F4F4F4",
+        background_2: "#F4F4F4",
         outline: "#A0A0A0",
       },
       fontFamily: {

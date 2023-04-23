@@ -1,4 +1,5 @@
 import Button from "@/components/button";
+import CTA from "@/components/cta";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -24,9 +25,15 @@ export default function Home() {
             amet consectetur. Orci nibh nullam risus adipiscing odio. Neque
             lacus nibh eros in.
           </p>
-          <Button onClick={() => router.push("/")} text="BROWSE TEAS" />
+          <Button
+            bg_color="bg-primary"
+            f_color="text-white"
+            onClick={() => router.push("/")}
+            text="BROWSE TEAS"
+          />
         </div>
       </div>
+      <CTA />
     </main>
   );
 }
