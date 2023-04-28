@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import BlogPreview from "@/components/BlogPreview";
 import Button from "@/components/button";
 import Collection from "@/components/collection";
@@ -17,7 +16,7 @@ export default function Home() {
           alt="tea"
           width={500}
           height={400}
-          className="object-cover"
+          className="object-cover h-[400px]"
         />
         <div className="flex flex-col gap-10 max-w-[400px]">
           <h1 className="text-4xl font-secondary">
@@ -40,9 +39,9 @@ export default function Home() {
       <CTA />
       <Collection />
       <BlogPreview />
-      <div className="flex mt-10 justify-between items-center gap-16">
+      <div className="flex items-center justify-between gap-16 mt-10">
         <div className="flex flex-col gap-10">
-          <h3 className="font-semibold text-2xl font-secondary">
+          <h3 className="text-2xl font-semibold font-secondary">
             FOR WHOLESALERS
           </h3>
           <p className="w-[600px]">
@@ -58,10 +57,12 @@ export default function Home() {
             text="GET A FREE CONSULTATION"
           />
         </div>
-        <img
+        <Image
           src="/images/tea.jpg"
           alt="tea"
-          className="object-cover h-[450px] w-[400px]"
+          height={450}
+          width={450}
+          className="object-cover h-[450px]"
         />
       </div>
       <Footer />

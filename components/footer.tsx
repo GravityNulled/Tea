@@ -3,10 +3,10 @@ import { AiOutlineMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 const Footer = () => {
   return (
-    <div className="bg-background_2 py-10 mt-16">
-      <div className="flex mx-24 gap-16 justify-between">
+    <div className="py-10 mt-16 bg-background_2">
+      <div className="flex justify-between gap-16 mx-24">
         <div className="flex flex-col gap-8">
-          <h1 className="uppercase font-semibold">Collections</h1>
+          <h1 className="font-semibold uppercase">Collections</h1>
           <div className="flex flex-col">
             <p>Black teas</p>
             <p>Green teas</p>
@@ -20,7 +20,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          <h1 className="uppercase font-semibold">About us</h1>
+          <h1 className="font-semibold uppercase">About us</h1>
           <div className="flex flex-col">
             <p>About us</p>
             <p>About our tea</p>
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          <h1 className="uppercase font-semibold">Customer Service</h1>
+          <h1 className="font-semibold uppercase">Customer Service</h1>
           <div className="flex flex-col">
             <p>Ordering and payment</p>
             <p>Delivery</p>
@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col gap-8">
-          <h1 className="uppercase font-semibold">Contact Us</h1>
+          <h1 className="font-semibold uppercase">Contact Us</h1>
           <div className="flex flex-col">
             <div className="flex items-center gap-4">
               <IoLocationOutline /> Mombasa, Kenya

@@ -1,21 +1,23 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from "next/image";
 import React from "react";
 
 const BlogPreview = () => {
   return (
-    <div className="mt-4 bg-background_2 py-10">
-      <h3 className="text-center font-bold text-xl mb-10 font-secondary">
+    <div className="py-10 mt-4 bg-background_2">
+      <h3 className="mb-10 text-xl font-bold text-center font-secondary">
         Last Blog Posts
       </h3>
-      <div className="grid gap-4 grid-cols-2">
+      <div className="grid grid-cols-2 gap-4">
         <div className="flex items-center">
-          <img
+          <Image
+            height={400}
+            width={200}
             src="/images/blog1.jpg"
             className="object-cover h-[400px]"
             alt="blog"
           />
-          <div className="flex items-center flex-col gap-4">
-            <h4 className="text-center uppercase font-semibold">
+          <div className="flex flex-col items-center gap-4">
+            <h4 className="font-semibold text-center uppercase">
               How to steep tea like a pro
             </h4>
             <p className="text-center">
@@ -28,13 +30,15 @@ const BlogPreview = () => {
           </div>
         </div>
         <div className="flex items-center">
-          <img
+          <Image
+            height={400}
+            width={200}
             src="/images/blog2.jpg"
             className="object-cover h-[400px]"
             alt="blog"
           />
-          <div className="flex items-center flex-col gap-4">
-            <h4 className="text-center uppercase font-semibold">
+          <div className="flex flex-col items-center gap-4">
+            <h4 className="font-semibold text-center uppercase">
               How to steep tea like a pro
             </h4>
             <p className="text-center">
