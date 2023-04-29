@@ -36,3 +36,69 @@ export const teas = [
     name: "teaware",
   },
 ];
+
+export const ingridients: Array<IIngridient> = [
+  {
+    image: "/images/t1.jpg",
+    discount: 0,
+    name: "Ceylon Ginger Cinnamon chai tea",
+    price: 4.85,
+    weight: "50g",
+  },
+  {
+    image: "/images/t2.jpg",
+    discount: 0,
+    name: "Ceylon Ginger Cinnamon chai tea",
+    price: 4.85,
+    weight: "50g",
+  },
+  {
+    image: "/images/t3.jpg",
+    discount: 0,
+    name: "Ceylon Ginger Cinnamon chai tea",
+    price: 4.85,
+    weight: "50g",
+  },
+  {
+    image: "/images/t4.jpg",
+    discount: 0,
+    name: "Ceylon Ginger Cinnamon chai tea",
+    price: 4.85,
+    weight: "50g",
+  },
+  {
+    image: "/images/t5.jpg",
+    discount: 0,
+    name: "Ceylon Ginger Cinnamon chai tea",
+    price: 4.85,
+    weight: "50g",
+  },
+  {
+    image: "/images/t6.jpg",
+    discount: 0,
+    name: "Ceylon Ginger Cinnamon chai tea",
+    price: 4.85,
+    weight: "50g",
+  },
+  {
+    image: "/images/t7.jpg",
+    discount: 0,
+    name: "Ceylon Ginger Cinnamon chai tea",
+    price: 4.85,
+    weight: "50g",
+  },
+  {
+    image: "/images/t1.jpg",
+    discount: 0,
+    name: "Ceylon Ginger Cinnamon chai tea",
+    price: 4.85,
+    weight: "50g",
+  },
+  {
+    image: "/images/t3.jpg",
+    discount: 0,
+    name: "Ceylon Ginger Cinnamon chai tea",
+    price: 4.85,
+    weight: "50g",
+  },
+];
