@@ -5,7 +5,8 @@ import Ingridient from "@/components/Ingridient";
 import { ingridients } from "../../data";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useState } from "react";
-const Type = (props) => {
+import Link from "next/link";
+const Type = () => {
   const router = useRouter();
   const { type } = router.query;
   const [colClicked, setColClicked] = useState(false);
@@ -57,14 +58,15 @@ const Type = (props) => {
         <div className="grid grid-cols-3 gap-10">
           {ingridients.map((ingrident, index) => {
             return (
-              <Ingridient
-                sku={ingrident.sku}
-                image={ingrident.image}
-                name={ingrident.name}
-                price={ingrident.price}
-                weight={ingrident.weight}
-                key={index}
-              />
+              <Link href={`${type}/${ingrident.sku}`} key={index}>
+                <Ingridient
+                  sku={ingrident.sku}
+                  image={ingrident.image}
+                  name={ingrident.name}
+                  price={ingrident.price}
+                  weight={ingrident.weight}
+                />
+              </Link>
             );
           })}
         </div>
