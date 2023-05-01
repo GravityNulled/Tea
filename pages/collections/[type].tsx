@@ -58,6 +58,7 @@ const Type = () => {
           {ingridients.map((ingrident, index) => {
             return (
               <Ingridient
+                
                 image={ingrident.image}
                 name={ingrident.name}
                 price={ingrident.price}

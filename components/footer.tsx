@@ -1,22 +1,41 @@
 import { IoLocationOutline } from "react-icons/io5";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
+import Link from "next/link";
 const Footer = () => {
   return (
-    <div className="py-10 mt-16 bg-background_2">
+    <div className="py-10 mx-auto w-5/6 mt-16 bg-background_2">
       <div className="flex justify-between gap-16 mx-24">
         <div className="flex flex-col gap-8">
           <h1 className="font-semibold uppercase">Collections</h1>
           <div className="flex flex-col">
-            <p>Black teas</p>
-            <p>Green teas</p>
-            <p>White teas</p>
-            <p>Herbal teas</p>
-            <p>Matcha</p>
-            <p>Chai</p>
-            <p>Oolong</p>
-            <p>Rooibos teas</p>
-            <p>Teawhare</p>
+            <Link href="collections/Black tea">
+              <p>Black tea</p>
+            </Link>
+            <Link href="collections/Green tea">
+              <p>Green tea</p>
+            </Link>
+            <Link href="collections/White tea">
+              <p>White tea</p>
+            </Link>
+            <Link href="collections/>Herbal">
+              <p>Herbal tea</p>
+            </Link>
+            <Link href="collections/Matcha">
+              <p>Matcha</p>
+            </Link>
+            <Link href="collections/Chai">
+              <p>Chai</p>
+            </Link>
+            <Link href="collections/Oolong">
+              <p>Oolong</p>
+            </Link>
+            <Link href="collections/Rooibos teas">
+              <p>Rooibos teas</p>
+            </Link>
+            <Link href="collections/Teawhare">
+              <p>Teawhare</p>
+            </Link>
           </div>
         </div>
         <div className="flex flex-col gap-8">

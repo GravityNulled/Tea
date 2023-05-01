@@ -65,7 +65,6 @@ export default function Home() {
           className="object-cover h-[450px]"
         />
       </div>
-      <Footer />
     </main>
   );
 }

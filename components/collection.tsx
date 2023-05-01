@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { teas } from "@/data";
+import Link from "next/link";
 const Collection = () => {
   return (
     <div className="py-10">
@@ -9,15 +10,20 @@ const Collection = () => {
         {teas.map((tea, index) => {
           return (
             <div className="flex flex-col items-center" key={index}>
-              <Image
-                width={400}
-                height={300}
-                className="object-cover h-[300px]"
-                src={tea.image}
-                alt="tea"
-              />
-              {/* <Image src={tea.image} alt="tea" width={400} height={300} /> */}
-              <p className="py-4 text-xl uppercase">{tea.name}</p>
+              <Link href={`collections/${tea.name}`}>
+                <Image
+                  width={400}
+                  height={300}
+                  className="object-cover h-[300px] hover:scale-105 duration-300 ease-in-out"
+                  src={tea.image}
+                  alt="tea"
+                />
+              </Link>
+              <Link href={`collections/${tea.name}`}>
+                <p className="py-4 text-xl uppercase cursor-pointer">
+                  {tea.name}
+                </p>
+              </Link>
             </div>
           );
         })}
