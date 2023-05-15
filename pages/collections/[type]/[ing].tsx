@@ -8,6 +8,7 @@ import { BsCupHot } from "react-icons/bs";
 import { TfiAlarmClock } from "react-icons/tfi";
 import { TbTemperature } from "react-icons/tb";
 import Ingridient from "@/components/Ingridient";
+import Recommendation from "@/components/recommendation";
 
 function Product() {
   const router = useRouter();
@@ -48,9 +49,9 @@ function Product() {
           <p className="mt-5 font-secondary text-3xl">$3.90</p>
           <div className="flex gap-5 mt-8">
             <div className="flex items-center gap-3">
-              <button className="text-3xl">-</button>
-              <p className="font-secondary text-2xl">1</p>
-              <button className="text-3xl">+</button>
+              <button className="text-2xl">-</button>
+              <p className="font-secondary text-xl">1</p>
+              <button className="text-2xl">+</button>
             </div>
             <Button
               bg_color="bg-black"
@@ -124,32 +125,7 @@ function Product() {
         <p className="font-secondary font-black text-2xl text-center mb-10">
           You may also like
         </p>
-        <div className="grid grid-cols-3 w-[800px] mx-auto">
-          <Ingridient
-            image="/images/t1.jpg"
-            name="Ceylon Ginger Cinnamon chai tea"
-            price={4}
-            weight="50g"
-            sku="asddsa"
-            discount={0}
-          />
-          <Ingridient
-            image="/images/t2.jpg"
-            name="Ceylon Ginger Cinnamon chai tea"
-            price={4}
-            weight="50g"
-            sku="asddsa"
-            discount={0}
-          />
-          <Ingridient
-            image="/images/t3.jpg"
-            name="Ceylon Ginger Cinnamon chai tea"
-            price={4}
-            weight="50g"
-            sku="asddsa"
-            discount={0}
-          />
-        </div>
+        <Recommendation />
       </p>
     </div>
   );
