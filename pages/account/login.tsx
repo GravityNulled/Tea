@@ -26,37 +26,45 @@ const Login = () => {
           Welcome back! Sign in for faster checkout.
         </p>
         <div className="flex flex-col gap-6">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Email Address"
-              className="h-10 px-10 py-2 w-full"
-              {...register("email", {
-                required: "Enter email address",
-                pattern: {
-                  value: /^\S+@\S+\.\S+$/,
-                  message: "Incorrect Email",
-                },
-              })}
-            />
-            <div className="absolute top-[11px] left-[5px]">
-              <AiOutlineMail size={20} />
+          <div className="flex flex-col">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Email Address"
+                className="h-10 px-10 py-2 w-full"
+                {...register("email", {
+                  required: "Email required",
+                  pattern: {
+                    value: /^\S+@\S+\.\S+$/,
+                    message: "Incorrect Email",
+                  },
+                })}
+              />
+              <div className="absolute top-[11px] left-[5px]">
+                <AiOutlineMail size={20} />
+              </div>
             </div>
+            <p className="text-pink-600 text-xs mt-1">
+              {errors?.email?.message}
+            </p>
           </div>
-          <p className="text-pink-600 text-xs">{errors?.email?.message}</p>
 
-          <div className="relative">
-            <input
-              type="password"
-              placeholder="Password"
-              className="h-10 px-10 py-2 w-full"
-              {...register("password", { required: "Password is required" })}
-            />
-            <div className="absolute top-[11px] left-[5px]">
-              <AiOutlineGift size={20} />
+          <div className="flex flex-col">
+            <div className="relative">
+              <input
+                type="password"
+                placeholder="Password"
+                className="h-10 px-10 py-2 w-full"
+                {...register("password", { required: "Password is required" })}
+              />
+              <div className="absolute top-[11px] left-[5px]">
+                <AiOutlineGift size={20} />
+              </div>
             </div>
+            <p className="text-pink-600 text-xs mt-1">
+              {errors?.password?.message}
+            </p>
           </div>
-          <p className="text-pink-600 text-xs">{errors?.password?.message}</p>
           <div className="flex justify-between">
             <div className="flex gap-2">
               <input type="checkbox" name="remember" id="remember" />
