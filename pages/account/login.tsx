@@ -1,5 +1,5 @@
-import Button from "@/components/button";
-import { ChangeEvent, useState } from "react";
+import Link from "next/link";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { AiOutlineMail, AiOutlineGift } from "react-icons/ai";
 const Login = () => {
   const [email, setEmail] = useState<string>();
@@ -10,9 +10,15 @@ const Login = () => {
   const handlePassword = (e: ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
   };
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
   return (
     <section className="w-full mt-10 flex justify-center items-center">
-      <form className="flex flex-col bg-background_2 py-10 px-10">
+      <form
+        onSubmit={(e) => handleSubmit(e)}
+        className="flex flex-col bg-background_2 py-10 px-10"
+      >
         <h1>Already a customer?</h1>
         <p className="text-xs my-3">
           Welcome back! Sign in for faster checkout.
@@ -47,7 +53,9 @@ const Login = () => {
               <input type="checkbox" name="remember" id="remember" />
               <p className="text-xs">Please remember me</p>
             </div>
-            <p className="text-[#C3B212] text-xs">Forget password?</p>
+            <Link href={"/account/register"} className="text-[#C3B212] text-xs">
+              Create an account
+            </Link>
           </div>
           <button className="bg-black text-white px-4 py-2"> Login</button>
         </div>
