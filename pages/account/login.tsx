@@ -1,53 +1,62 @@
 import Link from "next/link";
-import { ChangeEvent, FormEvent, useState } from "react";
 import { AiOutlineMail, AiOutlineGift } from "react-icons/ai";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+interface IFormInput {
+  email: string;
+  password: string;
+}
+
 const Login = () => {
-  const [email, setEmail] = useState<string>();
-  const [password, setPassword] = useState<string>();
-  const handleEmail = (e: ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-  const handlePassword = (e: ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-  };
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormInput>();
+  const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
+  console.log(errors);
   return (
     <section className="w-full mt-10 flex justify-center items-center">
       <form
-        onSubmit={(e) => handleSubmit(e)}
+        onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col bg-background_2 py-10 px-10"
       >
         <h1>Already a customer?</h1>
         <p className="text-xs my-3">
           Welcome back! Sign in for faster checkout.
         </p>
-        <div className="flex flex-col gap-7">
+        <div className="flex flex-col gap-6">
           <div className="relative">
             <input
               type="text"
               placeholder="Email Address"
               className="h-10 px-10 py-2 w-full"
-              onChange={(e) => handleEmail(e)}
-              value={email}
+              {...register("email", {
+                required: "Enter email address",
+                pattern: {
+                  value: /^\S+@\S+\.\S+$/,
+                  message: "Incorrect Email",
+                },
+              })}
             />
             <div className="absolute top-[11px] left-[5px]">
               <AiOutlineMail size={20} />
             </div>
           </div>
+          <p className="text-pink-600 text-xs">{errors?.email?.message}</p>
+
           <div className="relative">
             <input
               type="password"
-              placeholder="Email Address"
-              onChange={(e) => handlePassword(e)}
+              placeholder="Password"
               className="h-10 px-10 py-2 w-full"
-              value={password}
+              {...register("password", { required: "Password is required" })}
             />
             <div className="absolute top-[11px] left-[5px]">
               <AiOutlineGift size={20} />
             </div>
           </div>
+          <p className="text-pink-600 text-xs">{errors?.password?.message}</p>
           <div className="flex justify-between">
             <div className="flex gap-2">
               <input type="checkbox" name="remember" id="remember" />
