@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { AiOutlineMail, AiOutlineGift } from "react-icons/ai";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/router";
 
 interface IFormInput {
   email: string;
@@ -8,13 +10,26 @@ interface IFormInput {
 }
 
 const Login = () => {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = (data) => console.log(data);
-  console.log(errors);
+
+  const { data: session } = useSession();
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    const signInResponse = await signIn("credentials", {
+      callbackUrl: "/",
+      redirect: false,
+      email: data.email,
+      password: data.password,
+    });
+    if (!signInResponse?.error && signInResponse?.ok) {
+      router.push("/");
+    }
+  };
   return (
     <section className="w-full mt-10 flex justify-center items-center">
       <form
