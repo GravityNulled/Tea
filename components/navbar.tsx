@@ -22,9 +22,12 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex gap-4">
-          <p className="uppercase hover:text-secondary hover:cursor-pointer">
+          <Link
+            href={"/collections"}
+            className="uppercase hover:text-secondary hover:cursor-pointer"
+          >
             tea collections
-          </p>
+          </Link>
           <p className="uppercase hover:text-secondary hover:cursor-pointer">
             accessories
           </p>

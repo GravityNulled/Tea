@@ -30,7 +30,7 @@ export default function Home() {
           <Button
             bg_color="bg-primary"
             f_color="text-white"
-            onClick={() => router.push("/")}
+            onClick={() => router.push("/collections")}
             text="BROWSE TEAS"
           />
         </div>
