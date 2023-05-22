@@ -9,22 +9,26 @@ export default async function handler(
   if (req.method !== "POST") {
     res.status(405);
   }
-  const { email, password, name } = req.body;
-  const encryptedPass = await bcrypt.hash(password, 10);
-  const userExists = await prisma.user.findUnique({
-    where: {
-      email,
-    },
-  });
-  if (userExists) {
-    return res.status(200).send("Email already exists");
+  try {
+    const { email, password, name } = req.body;
+    const encryptedPass = await bcrypt.hash(password, 10);
+    const userExists = await prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
+    if (userExists) {
+      return res.status(200).send("Email already exists");
+    }
+    const user = await prisma.user.create({
+      data: {
+        email,
+        name,
+        password: encryptedPass,
+      },
+    });
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).send("Something went wrong");
   }
-  const user = await prisma.user.create({
-    data: {
-      email,
-      name,
-      password: encryptedPass,
-    },
-  });
-  res.status(200).json(user);
 }
