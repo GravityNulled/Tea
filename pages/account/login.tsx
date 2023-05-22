@@ -19,6 +19,9 @@ const Login = () => {
   } = useForm<IFormInput>();
 
   const { data: session } = useSession();
+  if (session) {
+    router.push("/");
+  }
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     const signInResponse = await signIn("credentials", {
       callbackUrl: "/",

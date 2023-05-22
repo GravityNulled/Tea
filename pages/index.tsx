@@ -2,7 +2,6 @@ import BlogPreview from "@/components/BlogPreview";
 import Button from "@/components/button";
 import Collection from "@/components/collection";
 import CTA from "@/components/cta";
-import Footer from "@/components/footer";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
